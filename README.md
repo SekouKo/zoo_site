@@ -87,6 +87,7 @@ Offrir une application ergonomique permettant :
 - **Git** : Suivi de version
 - **Trello** : Suivi du projet
 - **MongoDB Compass** : Interface graphique pour MongoDB
+- **Deploiement**: Heroku https://zoo-site-heroku-eb2d5581e91f.herokuapp.com/
 
 ---
 

@@ -1,20 +1,17 @@
 <?php
-$host = 'localhost';
-$db   = 'zoo_db';
-$user = 'root';
-$pass = ''; // mot de passe vide par défaut sur XAMPP
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
+$host = getenv("DB_HOST");
+$port = getenv("DB_PORT");
+$db   = getenv("DB_NAME");
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASS");
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8";
+    $pdo = new PDO($dsn, $user, $pass);
+    // echo "Connexion réussie !";
 } catch (PDOException $e) {
-    // Message d'erreur lisible
-    die("Erreur de connexion à la base de données : " . $e->getMessage());
+    echo "Erreur de connexion à la base de données : " . $e->getMessage();
+    exit;
 }
+
 ?>
