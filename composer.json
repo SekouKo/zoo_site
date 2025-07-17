@@ -1,6 +1,10 @@
 {
-    "require": {
-        "phpmailer/phpmailer": "*",
+"name": "sekouko/zoo_site",
+"description": "Projet Zoo ECF",
+  "require": {
+        "phpmailer/phpmailer": "^6.9",
         "mongodb/mongodb": "1.16.1"
     }
 }
+
+
